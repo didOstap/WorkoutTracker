@@ -24,7 +24,6 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
-build/
 .idea
 .tmp
 .gradle
@@ -49,3 +48,6 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+
+# google
+*.plist

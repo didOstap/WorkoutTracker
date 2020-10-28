@@ -1,20 +1,19 @@
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { MY_WEEK_SCREEN } from '../../constants/navigation';
-import Example from '../Example';
 import { MY_WEEK } from '../../constants/strings';
+import MockScreen from '../MockScreen';
 
-const MyWeekStack = createStackNavigator(
-  {
-    [MY_WEEK_SCREEN]: {
-      screen: Example,
-      navigationOptions: {
-        headerTitle: MY_WEEK,
-      },
-    },
-  },
-  {
-    initialRouteName: MY_WEEK_SCREEN,
-  }
+const MyWeekStack = createStackNavigator();
+
+const MyWeekStackScreen = () => (
+  <MyWeekStack.Navigator>
+    <MyWeekStack.Screen
+      name={MY_WEEK_SCREEN}
+      component={MockScreen}
+      options={{ title: MY_WEEK }}
+    />
+  </MyWeekStack.Navigator>
 );
 
-export default MyWeekStack;
+export default MyWeekStackScreen;
