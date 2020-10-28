@@ -1,20 +1,19 @@
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { EXERCISES_SCREEN } from '../../constants/navigation';
-import Example from '../Example';
 import { EXERCISES } from '../../constants/strings';
+import MockScreen from '../MockScreen';
 
-const ExercisesStack = createStackNavigator(
-  {
-    [EXERCISES_SCREEN]: {
-      screen: Example,
-      navigationOptions: {
-        headerTitle: EXERCISES,
-      },
-    },
-  },
-  {
-    initialRouteName: EXERCISES_SCREEN,
-  }
+const ExercisesStack = createStackNavigator();
+
+const ExercisesStackScreen = () => (
+  <ExercisesStack.Navigator>
+    <ExercisesStack.Screen
+      name={EXERCISES_SCREEN}
+      component={MockScreen}
+      options={{ title: EXERCISES }}
+    />
+  </ExercisesStack.Navigator>
 );
 
-export default ExercisesStack;
+export default ExercisesStackScreen;

@@ -1,20 +1,20 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { DAIRY_SCREEN } from '../../constants/navigation';
-import Example from '../Example';
-import { DAIRY } from '../../constants/strings';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const DairyStack = createStackNavigator(
-  {
-    [DAIRY_SCREEN]: {
-      screen: Example,
-      navigationOptions: {
-        headerTitle: DAIRY,
-      },
-    },
-  },
-  {
-    initialRouteName: DAIRY_SCREEN,
-  }
+import { DAIRY_SCREEN } from '../../constants/navigation';
+import { DAIRY } from '../../constants/strings';
+import MockScreen from '../MockScreen';
+
+const DairyStack = createStackNavigator();
+
+const DairyStackScreen = () => (
+  <DairyStack.Navigator>
+    <DairyStack.Screen
+      name={DAIRY_SCREEN}
+      component={MockScreen}
+      options={{ title: DAIRY }}
+    />
+  </DairyStack.Navigator>
 );
 
-export default DairyStack;
+export default DairyStackScreen;

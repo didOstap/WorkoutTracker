@@ -1,4 +1,7 @@
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import {
   WORKOUTS_STACK,
   DAIRY_STACK,
@@ -6,55 +9,76 @@ import {
   EXERCISES_STACK,
   SETTINGS_STACK,
 } from '../../constants/navigation';
-import {
-  WORKOUTS,
-  DAIRY,
-  MY_WEEK,
-  EXERCISES,
-  SETTINGS,
-} from '../../constants/strings';
 import WorkoutsStack from './WorkoutsStack';
 import DairyStack from './DairyStack';
-import MyWeekStack from './MyWeekStack';
-import ExercisesStack from './ExercisesStack';
-import SettingsStack from './SettingsStack';
+import MyWeekStackScreen from './MyWeekStack';
+import ExercisesStackScreen from './ExercisesStack';
+import SettingsStackScreen from './SettingsStack';
+import {
+  DAIRY,
+  EXERCISES,
+  MY_WEEK,
+  SETTINGS,
+  WORKOUTS,
+} from '../../constants/strings';
+import palette from '../../components/styles/palette';
+import { getTabBarIcon } from '../../models/navigation';
 
-const AppTabs = createBottomTabNavigator(
-  {
-    [WORKOUTS_STACK]: {
-      screen: WorkoutsStack,
-      navigationOptions: {
-        tabBarLabel: WORKOUTS,
-      },
-    },
-    [DAIRY_STACK]: {
-      screen: DairyStack,
-      navigationOptions: {
-        tabBarLabel: DAIRY,
-      },
-    },
-    [MY_WEEK_STACK]: {
-      screen: MyWeekStack,
-      navigationOptions: {
-        tabBarLabel: MY_WEEK,
-      },
-    },
-    [EXERCISES_STACK]: {
-      screen: ExercisesStack,
-      navigationOptions: {
-        tabBarLabel: EXERCISES,
-      },
-    },
-    [SETTINGS_STACK]: {
-      screen: SettingsStack,
-      navigationOptions: {
-        tabBarLabel: SETTINGS,
-      },
-    },
-  },
-  {
-    initialRouteName: WORKOUTS_STACK,
-  }
-);
+const AppTabs = createBottomTabNavigator();
 
-export default AppTabs;
+const AppTabsScreen = () => {
+  return (
+    <AppTabs.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          const iconName = getTabBarIcon(route.name, {});
+          return (
+            <MaterialCommunityIcons name={iconName} size={size} color={color} />
+          );
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: palette.black.solid,
+        inactiveTintColor: palette.black.blackMedium,
+      }}
+    >
+      <AppTabs.Screen
+        name={WORKOUTS_STACK}
+        component={WorkoutsStack}
+        options={{
+          title: WORKOUTS.toUpperCase(),
+        }}
+      />
+      <AppTabs.Screen
+        name={DAIRY_STACK}
+        component={DairyStack}
+        options={{
+          title: DAIRY.toUpperCase(),
+        }}
+      />
+      <AppTabs.Screen
+        name={MY_WEEK_STACK}
+        component={MyWeekStackScreen}
+        options={{
+          title: MY_WEEK.toUpperCase(),
+        }}
+      />
+      <AppTabs.Screen
+        name={EXERCISES_STACK}
+        component={ExercisesStackScreen}
+        options={{
+          title: EXERCISES.toUpperCase(),
+        }}
+      />
+      <AppTabs.Screen
+        name={SETTINGS_STACK}
+        component={SettingsStackScreen}
+        options={{
+          title: SETTINGS.toUpperCase(),
+        }}
+      />
+    </AppTabs.Navigator>
+  );
+};
+
+export default AppTabsScreen;

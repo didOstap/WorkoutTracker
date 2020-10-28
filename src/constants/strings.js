@@ -4,3 +4,7 @@ export const MY_WEEK = 'My Week';
 export const EXERCISES = 'Exercises';
 export const SETTINGS = 'Settings';
 export const CREATE_WORKOUT = 'Create Workout';
+export const WORKOUT = 'WORKOUT';
+export const TRACKER = 'TRACKER';
+export const SIGN_IN_WITH_GOOGLE = 'Sign In With Google';
+export const CONTINUE_WITH_FACEBOOK = 'Continue With Facebook';

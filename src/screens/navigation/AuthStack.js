@@ -1,44 +1,17 @@
-import { createSwitchNavigator } from 'react-navigation';
-import {
-  CREATE_ACCOUNT_SCREEN,
-  FORGOT_PASSWORD_SCREEN,
-  LANDING_SCREEN,
-  RESET_PASSWORD_SCREEN,
-  SIGN_IN_SCREEN,
-} from '../../constants/navigation';
-import Example from '../Example';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const AuthStack = createSwitchNavigator({
-  [LANDING_SCREEN]: {
-    screen: Example,
-    navigationOptions: {
-      headerTitle: 'Landing',
-    },
-  },
-  [SIGN_IN_SCREEN]: {
-    screen: Example,
-    navigationOptions: {
-      headerTitle: 'Sign In',
-    },
-  },
-  [CREATE_ACCOUNT_SCREEN]: {
-    screen: Example,
-    navigationOptions: {
-      headerTitle: 'Create Account',
-    },
-  },
-  [FORGOT_PASSWORD_SCREEN]: {
-    screen: Example,
-    navigationOptions: {
-      headerTitle: 'Forgot Password',
-    },
-  },
-  [RESET_PASSWORD_SCREEN]: {
-    screen: Example,
-    navigationOptions: {
-      headerTitle: 'Reset Password',
-    },
-  },
-});
+import { SIGN_IN_SCREEN } from '../../constants/navigation';
+import SignInScreen from '../SignInScreen';
 
-export default AuthStack;
+const AuthStack = createStackNavigator();
+
+const AuthStackScreen = () => {
+  return (
+    <AuthStack.Navigator headerMode="none">
+      <AuthStack.Screen name={SIGN_IN_SCREEN} component={SignInScreen} />
+    </AuthStack.Navigator>
+  );
+};
+
+export default AuthStackScreen;
