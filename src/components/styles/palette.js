@@ -1,6 +1,7 @@
 export default {
   white: {
     solid: 'rgba(255, 255, 255, 1)',
+    inactive: 'rgba(255, 255, 255, .3)',
   },
   black: {
     low: 'rgba(0, 0, 0, 0.05)',
@@ -11,4 +12,5 @@ export default {
     solid: 'rgba(0, 0, 0, 1)',
   },
   coral: 'rgba(233, 68, 106, 1)',
+  blueSky: 'rgba(36, 111, 248, 1)',
 };

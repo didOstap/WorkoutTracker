@@ -38,8 +38,10 @@ const AppTabsScreen = () => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: palette.black.solid,
-        inactiveTintColor: palette.black.blackMedium,
+        activeTintColor: palette.white.solid,
+        inactiveTintColor: palette.white.inactive,
+        activeBackgroundColor: palette.blueSky,
+        inactiveBackgroundColor: palette.blueSky,
       }}
     >
       <AppTabs.Screen
