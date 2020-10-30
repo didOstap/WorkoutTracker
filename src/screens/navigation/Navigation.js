@@ -14,7 +14,11 @@ import AuthStackScreen from './AuthStack';
 const AppStack = createStackNavigator();
 
 const navigation = () => {
-  const { user, loading } = useAuth();
+  const { user, loading, error } = useAuth();
+
+  if (error) {
+    alert(error.message);
+  }
 
   return (
     <AppStack.Navigator headerMode="none">

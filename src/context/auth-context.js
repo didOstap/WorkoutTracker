@@ -1,8 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useMemo,
-} from 'react';
+import React, { createContext, useCallback, useMemo } from 'react';
 
 import { signInWithGoogle } from '../models/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';

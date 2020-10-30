@@ -1,0 +1,78 @@
+{
+  "barbell_chest_press": {
+    "name": "Barbell Chest Press",
+    "muscles": [1]
+  },
+  "barbell_deadlift": {
+    "name": "Barbell Deadlift",
+    "muscles": [2]
+  },
+  "barbell_deadlift1": {
+    "name": "Barbell Deadlift1",
+    "muscles": [2]
+  },
+  "barbell_deadlift2": {
+    "name": "Barbell Deadlift2",
+    "muscles": [2]
+  },
+  "barbell_deadlift3": {
+    "name": "Barbell Deadlift3",
+    "muscles": [2]
+  },
+  "barbell_deadlift4": {
+    "name": "Barbell Deadlift4",
+    "muscles": [2]
+  },
+  "barbell_deadlift5": {
+    "name": "Barbell Deadlift5",
+    "muscles": [2]
+  },
+  "barbell_deadlift6": {
+    "name": "Barbell Deadlift6",
+    "muscles": [2]
+  },
+  "barbell_deadlift8": {
+    "name": "Barbell Deadlift8",
+    "muscles": [2]
+  },
+  "barbell_deadlift9": {
+    "name": "Barbell Deadlift9",
+    "muscles": [2]
+  },
+  "barbell_deadlift10": {
+    "name": "Barbell Deadlift10",
+    "muscles": [2]
+  },
+  "barbell_deadlift11": {
+    "name": "Barbell Deadlift11",
+    "muscles": [2]
+  },
+  "barbell_deadlift12": {
+    "name": "Barbell Deadlift12",
+    "muscles": [2]
+  },
+  "barbell_deadlift13": {
+    "name": "Barbell Deadlift13",
+    "muscles": [2]
+  },
+  "barbell_deadlift14": {
+    "name": "Barbell Deadlift14",
+    "muscles": [2]
+  },
+  "barbell_deadlift15": {
+    "name": "Barbell Deadlift15",
+    "muscles": [2]
+  },
+  "barbell_deadlift16": {
+    "name": "Barbell Deadlift16",
+    "muscles": [2]
+  },
+  "barbell_deadlift17": {
+    "name": "Barbell Deadlift17",
+    "muscles": [2]
+  },
+  "barbell_deadlift18": {
+    "name": "Barbell Deadlift18",
+    "muscles": [2]
+  }
+}
