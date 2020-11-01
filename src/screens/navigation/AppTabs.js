@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {
   WORKOUTS_STACK,
@@ -21,29 +20,13 @@ import {
   SETTINGS,
   WORKOUTS,
 } from '../../constants/strings';
-import palette from '../../components/styles/palette';
-import { getTabBarIcon } from '../../models/navigation';
+import BottomTabBar from '../../components/BottomTabBar';
 
 const AppTabs = createBottomTabNavigator();
 
 const AppTabsScreen = () => {
   return (
-    <AppTabs.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          const iconName = getTabBarIcon(route.name, {});
-          return (
-            <MaterialCommunityIcons name={iconName} size={size} color={color} />
-          );
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: palette.white.solid,
-        inactiveTintColor: palette.white.inactive,
-        activeBackgroundColor: palette.blueSky,
-        inactiveBackgroundColor: palette.blueSky,
-      }}
-    >
+    <AppTabs.Navigator tabBar={(props) => <BottomTabBar {...props} />}>
       <AppTabs.Screen
         name={WORKOUTS_STACK}
         component={WorkoutsStack}

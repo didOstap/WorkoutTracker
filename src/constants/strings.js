@@ -8,3 +8,5 @@ export const WORKOUT = 'WORKOUT';
 export const TRACKER = 'TRACKER';
 export const SIGN_IN_WITH_GOOGLE = 'Sign In With Google';
 export const CONTINUE_WITH_FACEBOOK = 'Continue With Facebook';
+export const SEARCH_EXERCISE = 'Search Exercise';
+export const ADD_EXERCISE = 'Add Exercise';

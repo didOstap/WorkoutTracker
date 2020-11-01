@@ -4,17 +4,14 @@ import palette from './styles/palette';
 import React from 'react';
 
 const Exercise = ({ item: { name, muscles } }) => (
-  <View>
-    <View style={styles.container}>
-      <View style={styles.itemContainer}>
-        <Text style={styles.title}>{name}</Text>
-      </View>
-      <View style={styles.itemContainer}>
-        <Text style={styles.subTitle}>Muscles: {muscles}</Text>
-        <Ionicons name="ios-body" size={20} color={palette.blueSky} />
-      </View>
+  <View style={styles.container}>
+    <View>
+      <Text style={styles.title}>{name}</Text>
     </View>
-    <View style={styles.divider} />
+    <View style={styles.itemContainer}>
+      <Ionicons name="ios-body" size={20} color={palette.orange} />
+      <Text style={styles.subTitle}>{muscles}</Text>
+    </View>
   </View>
 );
 
@@ -23,7 +20,13 @@ export default Exercise;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
+    borderWidth: 1,
+    borderRadius: 20,
+    marginVertical: 5,
+    marginHorizontal: 25,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderColor: palette.grey.low,
   },
   itemContainer: {
     marginTop: 10,
@@ -32,14 +35,15 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 17,
-    fontWeight: '500',
+    color: palette.grey.light,
   },
   subTitle: {
     fontSize: 14,
-    color: palette.black.medium,
+    marginLeft: 5,
+    color: palette.grey.low,
   },
   divider: {
     borderBottomWidth: 1,
-    borderColor: palette.black.light,
+    borderColor: palette.grey.low,
   },
 });

@@ -11,9 +11,9 @@ import AppTabsScreen from './AppTabs';
 import LoadingScreen from '../LoadingScreen';
 import AuthStackScreen from './AuthStack';
 
-const AppStack = createStackNavigator();
+const NavigationStack = createStackNavigator();
 
-const navigation = () => {
+const NavigationStackScreen = () => {
   const { user, loading, error } = useAuth();
 
   if (error) {
@@ -21,28 +21,28 @@ const navigation = () => {
   }
 
   return (
-    <AppStack.Navigator headerMode="none">
+    <NavigationStack.Navigator headerMode="none">
       {loading ? (
-        <AppStack.Screen
+        <NavigationStack.Screen
           name={LOADING_SCREEN}
           component={LoadingScreen}
           options={{ animationEnabled: false }}
         />
       ) : user ? (
-        <AppStack.Screen
+        <NavigationStack.Screen
           name={APP_STACK}
           component={AppTabsScreen}
           options={{ animationEnabled: false }}
         />
       ) : (
-        <AppStack.Screen
+        <NavigationStack.Screen
           name={AUTH_STACK}
           component={AuthStackScreen}
           options={{ animationEnabled: false }}
         />
       )}
-    </AppStack.Navigator>
+    </NavigationStack.Navigator>
   );
 };
 
-export default navigation;
+export default NavigationStackScreen;

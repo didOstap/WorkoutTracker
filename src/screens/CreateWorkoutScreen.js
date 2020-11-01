@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import { WORKOUTS_SCREEN } from '../constants/navigation';
+import { useNavigation } from '@react-navigation/native';
 
-const CreateWorkoutScreen = ({ navigation, route }) => {
-  const navigateToWorkouts = useCallback(() => {
-    navigation.push(WORKOUTS_SCREEN);
-  }, []);
+import { ADD_EXERCISE } from '../constants/strings';
+
+const CreateWorkoutScreen = ({ route }) => {
+  const { navigate } = useNavigation();
+  const addExercise = useCallback(() => {}, []);
 
   return (
     <View
@@ -17,14 +18,14 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     >
       {route?.params?.name && <Text>{route.params.name}</Text>}
       <TouchableOpacity
-        onPress={() => navigateToWorkouts()}
+        onPress={() => addExercise()}
         style={{
           backgroundColor: '#fff',
           padding: 10,
           margin: 10,
         }}
       >
-        <Text>Go To Workouts</Text>
+        <Text>{ADD_EXERCISE}</Text>
       </TouchableOpacity>
     </View>
   );
