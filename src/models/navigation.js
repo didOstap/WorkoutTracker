@@ -8,14 +8,14 @@ import {
 
 export const getTabBarIcon = (routeName) => {
   if (routeName === WORKOUTS_STACK) {
-    return 'timer';
+    return 'clock';
   } else if (routeName === DAIRY_STACK) {
-    return 'calendar-month';
+    return 'calendar-alt';
   } else if (routeName === MY_WEEK_STACK) {
-    return 'chart-areaspline-variant';
+    return 'chart-bar';
   } else if (routeName === EXERCISES_STACK) {
     return 'dumbbell';
   } else if (routeName === SETTINGS_STACK) {
-    return 'settings-outline';
+    return 'align-justify';
   }
 };

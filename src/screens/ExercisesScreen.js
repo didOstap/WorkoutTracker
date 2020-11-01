@@ -6,6 +6,7 @@ import Exercise from '../components/Exercise';
 import CustomTextInput from '../components/CustomTextInput';
 import { getExercises } from '../models/exercises';
 import palette from '../components/styles/palette';
+import { SEARCH_EXERCISE } from '../constants/strings';
 
 const ExercisesScreen = () => {
   const [exercise, setExercise] = useState('');
@@ -19,14 +20,10 @@ const ExercisesScreen = () => {
       <CustomTextInput
         value={exercise}
         maxLength={50}
-        placeholder={'Find Exercise'}
+        placeholder={SEARCH_EXERCISE}
         onChangeText={handleExercise}
         leftIcon={
-          <Ionicons
-            name="ios-search"
-            size={24}
-            color={palette.black.blackMedium}
-          />
+          <Ionicons name="ios-search" size={24} color={palette.grey.low} />
         }
       />
       <View style={styles.itemContainer}>
@@ -46,9 +43,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: palette.white.solid,
+    backgroundColor: palette.grey.medium,
   },
   itemContainer: {
     width: '100%',
+    marginBottom: 50,
   },
 });

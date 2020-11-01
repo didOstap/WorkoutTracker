@@ -1,13 +1,16 @@
 import React, { useCallback } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { useAuth } from '../context/auth-context';
 import { WORKOUTS_SCREEN, WORKOUTS_STACK } from '../constants/navigation';
 
-const MockScreen = ({ navigation }) => {
+const MockScreen = () => {
   const { logout } = useAuth();
+  const {navigate} = useNavigation();
   const navigateToWorkouts = useCallback(() => {
-    navigation.navigate(WORKOUTS_STACK, { screen: WORKOUTS_SCREEN });
-  }, [navigation]);
+    navigate(WORKOUTS_STACK, { screen: WORKOUTS_SCREEN });
+  }, [navigate]);
   const loggingOut = useCallback(() => logout(), [logout]);
 
   return (

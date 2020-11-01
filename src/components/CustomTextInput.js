@@ -10,7 +10,7 @@ const CustomTextInput = (props) => {
       {!!leftIcon && leftIcon}
       <TextInput
         {...props}
-        placeholderTextColor={palette.black.blackMedium}
+        placeholderTextColor={palette.grey.low}
         style={[styles.textInput, height && { height }]}
       />
     </View>
@@ -22,16 +22,18 @@ export default CustomTextInput;
 const styles = StyleSheet.create({
   textInput: {
     marginLeft: 10,
+    color: palette.white.solid,
   },
   searchSection: {
-    margin: 5,
+    marginTop: 5,
+    marginHorizontal: 5,
     padding: 5,
-    width: '90%',
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 5,
+    paddingLeft: 15,
+    width: '95%',
+    height: 45,
+    borderRadius: 30,
     flexDirection: 'row',
     alignItems: 'center',
-    borderColor: palette.black.blackMedium,
+    backgroundColor: palette.grey.dark,
   },
 });
